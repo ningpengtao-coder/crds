@@ -5,11 +5,11 @@
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  name: charts.deploy.jxwydata.com
+  name: chartdeployments.jxwydata.com
 spec:
   conversion:
     strategy: None
-  group: deploy.jxwydata.com
+  group: jxwydata.com
   names:
     kind: ChartDeployment
     listKind: ChartDeploymentList
@@ -36,6 +36,7 @@ spec:
             type: object
           spec:
             description: ChartDeploymentSpec defines the desired state of ChartDeployment.
+            type: object
             properties:
               chartName:
                 description: helm chart name
