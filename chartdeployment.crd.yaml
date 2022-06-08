@@ -15,7 +15,6 @@ spec:
     listKind: ChartDeploymentList
     plural: chartdeployments
     singular: chartdeployment
-  preserveUnknownFields: true
   scope: Namespaced
   versions:
   - name: v1alpha1
