@@ -1,0 +1,76 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: charts.deploy.jxwydata.com
+spec:
+  conversion:
+    strategy: None
+  group: deploy.jxwydata.com
+  names:
+    kind: ChartDeployment
+    listKind: ChartDeploymentList
+    plural: chartdeployments
+    singular: chartdeployment
+  preserveUnknownFields: true
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: ChartDeployment is the Schema for the chartdeployments API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: ChartDeploymentSpec defines the desired state of ChartDeployment.
+            properties:
+              chartName:
+                description: helm chart name
+                type: string
+              chartVersion:
+                description: helm chart version
+                type: string
+              repoUrl:
+                description: helm chart repo url
+                type: string
+              valuesYaml:
+                description: helm chart values
+                type: string
+          status:
+            description: ChartDeploymentStatus defines the observed state of ChartDeployment
+            properties:
+              message:
+                description: Human-readable message indicating details about current
+                  operator phase or error.
+                type: string
+              phase:
+                description: Current phase of the operator.
+                type: string
+              ready:
+                description: True if all resources are in a ready state and all work
+                  is done.
+                type: boolean
+            required:
+            - message
+            - phase
+            - ready
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
