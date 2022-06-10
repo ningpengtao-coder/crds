@@ -50,6 +50,9 @@ spec:
               valuesYaml:
                 description: helm chart values
                 type: string
+              namespace:
+                description: helm chart deploy namespace
+                type: string
           status:
             description: ChartDeploymentStatus defines the observed state of ChartDeployment
             properties:
