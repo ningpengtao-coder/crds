@@ -47,6 +47,9 @@ spec:
               repoUrl:
                 description: helm chart repo url
                 type: string
+              operationType:
+                description: helm chart operation type, install or upgrade
+                type: string
               valuesYaml:
                 description: helm chart values
                 type: string
