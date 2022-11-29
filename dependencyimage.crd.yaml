@@ -41,7 +41,7 @@ spec:
               images:
                 description: a list of images that support thin mode, and obtain dependent pom by parsing thin images
                 type: array
-                items: {
+                items:
                   type: object
                   properties:
                     repository:
@@ -50,7 +50,6 @@ spec:
                     tag:
                       description: thin image tag
                       type: string
-                }
               dependencyImageUrl:
                 description: dependency image url,used to generate dependency image and push to private docker repository.
                 type: string
