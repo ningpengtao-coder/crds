@@ -50,12 +50,15 @@ spec:
                     tag:
                       description: thin image tag
                       type: string
-              dependencyImageUrl:
-                description: dependency image url,used to generate dependency image and push to private docker repository.
-                type: string
-              latestDependencyImageUrl:
-                description: the latest dependency image is used as a diff image to make a new dependency image
-                type: string
+              diffDependencyImage:
+                description: diff dependency image,used to generate diff dependency image and push to private docker repository.
+                type: object
+                properties:
+                  repository:
+                    description: diff dependency image repository
+                    type: string
+                  tag:
+                    description: diff dependency image tag,tag is an auto-incrementing number used to compare different versions
           status:
             description: DependencyImageStatus defines the observed state of DependencyImage
             properties:
