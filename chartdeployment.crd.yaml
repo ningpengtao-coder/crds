@@ -60,7 +60,7 @@ spec:
                 description: build mode fat mode thin-mode
                 type: string
               imageFilters:
-                description: image filter: filter common image
+                description: filter common image
                 type: array
                 items:
                   type: string
