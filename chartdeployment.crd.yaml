@@ -56,6 +56,14 @@ spec:
               namespace:
                 description: helm chart deploy namespace
                 type: string
+              buildMode:
+                description: build mode fat mode thin-mode
+                type: string
+              imageFilters:
+                description: image filter: filter common image
+                type: array
+                items:
+                  type: string
           status:
             description: ChartDeploymentStatus defines the observed state of ChartDeployment
             properties:
